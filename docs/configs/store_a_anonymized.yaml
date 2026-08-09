@@ -1,0 +1,72 @@
+store_id: STORE_A
+video_path: figures/store_a_behavior_debug_h264.mp4
+privacy_masks:
+- name: adjacent_store_sign
+  points:
+  - [520, 300]
+  - [1175, 300]
+  - [1175, 480]
+  - [520, 480]
+- name: target_store_sign
+  points:
+  - [1165, 350]
+  - [1885, 350]
+  - [1885, 540]
+  - [1165, 540]
+- name: lower_window_logo
+  points:
+  - [1585, 680]
+  - [1855, 680]
+  - [1855, 735]
+  - [1585, 735]
+- name: center_window_logo
+  points:
+  - [835, 555]
+  - [1065, 555]
+  - [1065, 615]
+  - [835, 615]
+traffic_roi:
+- [178, 546]
+- [253, 1078]
+- [1916, 1076]
+- [1913, 782]
+interest_roi:
+- [749, 625]
+- [772, 887]
+- [1861, 1072]
+- [1862, 780]
+entrance_roi:
+- [1214, 526]
+- [1219, 654]
+- [1435, 684]
+- [1444, 545]
+facade_zones:
+- name: left_window
+  points:
+  - [749, 625]
+  - [772, 887]
+  - [1099, 943]
+  - [1083, 672]
+- name: pre_entrance
+  points:
+  - [1083, 672]
+  - [1099, 943]
+  - [1240, 967]
+  - [1228, 692]
+- name: entrance_front
+  points:
+  - [1228, 692]
+  - [1240, 967]
+  - [1447, 1002]
+  - [1439, 721]
+- name: right_window
+  points:
+  - [1439, 721]
+  - [1447, 1002]
+  - [1861, 1072]
+  - [1862, 780]
+thresholds:
+  min_track_duration_s: 0.5
+  slowdown_speed_threshold_px_s: 60
+  stop_speed_threshold_px_s: 30
+  stop_duration_threshold_s: 1.5

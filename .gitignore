@@ -1,0 +1,20 @@
+# Local raw media and derived analysis outputs can contain store names,
+# bystanders, faces, and unmasked storefront imagery.
+data/raw/
+data/processed/
+outputs/
+public_artifact/
+
+# Real project annotations/specs may contain store names or raw media paths.
+configs/*.yaml
+!configs/bytetrack_storefront.yaml
+mall_storefront_behavior_analytics_SPEC.md
+
+# Local caches
+__pycache__/
+.pytest_cache/
+*.pyc
+.agents/
+.codex/
+.venv/
+venv/

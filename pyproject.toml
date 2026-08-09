@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mall-store-analytics"
+version = "0.1.0"
+description = "Anonymous storefront behavior analytics for outlet mall videos."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+annotation = [
+    "opencv-python>=4.8",
+]
+tracking = [
+    "ultralytics>=8.0",
+    "lap>=0.5.12",
+]
+
+[project.scripts]
+mallflow = "mallflow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
