@@ -227,6 +227,12 @@ def render_report(
     </div>
   </header>
   <main>
+    <section>
+      <h2>{lang("Trajectory Checks", "軌跡確認")}</h2>
+      <p class="note">{lang("ROIs, facade zones, ByteTrack foot-point trails, detection boxes, and cumulative entry count.", "ROI、ファサード分割、ByteTrackの足元軌跡、検出枠、累積入店カウント。")}</p>
+      {figures_html(figure_paths, output_path)}
+    </section>
+
     <div class="grid">
       {kpi_card(lang("Passers", "通行者"), passers)}
       {kpi_card(lang("Entries", "入店"), entries)}
@@ -255,12 +261,6 @@ def render_report(
     <section>
       <h2>{lang("Entry Tracks", "入店トラック")}</h2>
       {entry_table(entered_tracks)}
-    </section>
-
-    <section>
-      <h2>{lang("Trajectory Checks", "軌跡確認")}</h2>
-      <p class="note">{lang("ROIs, facade zones, ByteTrack foot-point trails, detection boxes, and cumulative entry count.", "ROI、ファサード分割、ByteTrackの足元軌跡、検出枠、累積入店カウント。")}</p>
-      {figures_html(figure_paths, output_path)}
     </section>
   </main>
   <script>
