@@ -1,5 +1,6 @@
 store_id: STORE_A
 video_path: figures/store_a_behavior_debug_h264.mp4
+privacy_blur_faces: true
 privacy_masks:
 - name: adjacent_store_sign
   points:

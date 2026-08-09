@@ -4,6 +4,7 @@ data/raw/
 data/processed/
 outputs/
 public_artifact/
+docs/figures/store_a_behavior_debug.mp4
 
 # Real project annotations/specs may contain store names or raw media paths.
 configs/*.yaml

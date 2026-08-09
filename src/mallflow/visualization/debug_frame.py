@@ -132,6 +132,8 @@ def save_track_debug_video(
         if (frame_id - start_frame) % frame_step == 0:
             timestamp_s = frame_id / source_fps
             draw_privacy_masks(frame, config, cv2)
+            if config.get("privacy_blur_faces"):
+                draw_face_privacy_blurs(frame, samples, timestamp_s, source_fps / frame_step, cv2)
             draw_config_overlay(frame, config, cv2)
             draw_track_points_from_samples(frame, samples, timestamp_s, trail_s, cv2)
             if draw_boxes:
@@ -179,6 +181,36 @@ def draw_privacy_masks(frame: Any, config: dict[str, Any], cv2: Any) -> None:
             continue
         color = tuple(mask.get("color", [32, 32, 32]))
         draw_filled_polygon(frame, points, color, cv2)
+
+
+def draw_face_privacy_blurs(
+    frame: Any,
+    samples: list[DebugTrackSample],
+    timestamp_s: float,
+    output_fps: float,
+    cv2: Any,
+) -> None:
+    tolerance_s = max(0.04, 0.55 / output_fps)
+    height, width = frame.shape[:2]
+    for sample in samples:
+        if abs(sample.timestamp_s - timestamp_s) > tolerance_s or sample.bbox is None:
+            continue
+        x1, y1, x2, y2 = sample.bbox
+        box_w = max(1, x2 - x1)
+        box_h = max(1, y2 - y1)
+        pad_x = round(box_w * 0.12)
+        head_h = max(12, round(box_h * 0.34))
+        blur_x1 = max(0, x1 - pad_x)
+        blur_x2 = min(width, x2 + pad_x)
+        blur_y1 = max(0, y1)
+        blur_y2 = min(height, y1 + head_h)
+        if blur_x2 <= blur_x1 or blur_y2 <= blur_y1:
+            continue
+        region = frame[blur_y1:blur_y2, blur_x1:blur_x2]
+        if region.size == 0:
+            continue
+        kernel = max(15, (min(region.shape[:2]) // 2) * 2 + 1)
+        frame[blur_y1:blur_y2, blur_x1:blur_x2] = cv2.GaussianBlur(region, (kernel, kernel), 0)
 
 
 def draw_filled_polygon(frame: Any, points: list[list[int]], color: tuple[int, int, int], cv2: Any) -> None:

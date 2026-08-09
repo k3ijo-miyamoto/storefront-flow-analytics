@@ -4,7 +4,7 @@ English | [日本語](#日本語)
 
 Anonymous behavior analytics for storefront videos.
 
-The app analyzes pedestrian flow around a storefront using manually configured ROIs, person detection, tracking, and aggregate behavior metrics. It can generate bilingual EN/JP reports with anonymized videos.
+The app analyzes pedestrian flow around a storefront using manually configured ROIs, person detection, tracking, and aggregate behavior metrics. It can generate bilingual EN/JP reports with storefront-name masks and face-region blurring.
 
 ![Storefront flow analytics tracking preview](docs/figures/store_a_tracking_thumbnail.jpg)
 
@@ -61,7 +61,7 @@ It includes:
 - Aggregate storefront metrics
 - Beta-Binomial uncertainty summaries
 - Facade-zone analysis
-- An anonymized debug video with storefront-name masks
+- An anonymized debug video with storefront-name masks and face-region blurring
 - Metric definitions in English and Japanese
 
 The repository intentionally excludes raw videos, unmasked outputs, and store-name-bearing intermediate files through `.gitignore`.
@@ -120,7 +120,7 @@ Annotation controls:
 
 店頭動画を対象にした、匿名化前提の行動分析ツールです。
 
-手動で設定したROI、人物検出、トラッキング、集計メトリクスを使って、店舗前の歩行者動線を分析します。匿名化済み動画を含む日英切替レポートも生成できます。
+手動で設定したROI、人物検出、トラッキング、集計メトリクスを使って、店舗前の歩行者動線を分析します。店舗名マスクと顔付近ぼかしを含む、匿名化済み動画付きの日英切替レポートも生成できます。
 
 ## デモ結果
 
@@ -175,7 +175,7 @@ GitHubのMarkdownでは、ローカルMP4がREADME内で安定してインライ
 - 店頭集計メトリクス
 - Beta-Binomialによる不確実性の要約
 - ファサード分割分析
-- 店舗名をマスクした匿名化デバッグ動画
+- 店舗名マスクと顔付近ぼかしを含む匿名化デバッグ動画
 - 英語・日本語のメトリクス定義
 
 raw動画、未マスク出力、店舗名を含む中間ファイルは `.gitignore` で除外しています。
