@@ -6,7 +6,7 @@ Anonymous behavior analytics for storefront videos.
 
 The app analyzes pedestrian flow around a storefront using manually configured ROIs, person detection, tracking, and aggregate behavior metrics. It can generate bilingual EN/JP reports with anonymized videos.
 
-![Anonymized storefront analytics preview](docs/figures/store_a_anonymized_check.jpg)
+![Storefront flow analytics tracking preview](docs/figures/store_a_tracking_thumbnail.jpg)
 
 ## Demo Results
 
