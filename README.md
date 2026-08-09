@@ -28,6 +28,16 @@ View the full bilingual report:
 
 GitHub's repository README shows this preview image and summary table directly on the repository top page. The full HTML report and embedded video are best viewed through GitHub Pages or by opening the local HTML file.
 
+## Summary Observations
+
+The sample shows `227` observed passers in the configured Traffic ROI, `86` facade exposures, and `16` entries. The observed entry rate is therefore `16 / 227 = 7.0%`. With a Beta-Binomial model, the posterior mean is `7.4%` and the 95% credible interval is `4.4% - 11.1%`. This range is more useful than the point estimate alone: in a short clip, the underlying entry tendency should be read as a band of plausible values rather than a fixed number.
+
+The observed exposure rate is `86 / 227 = 37.9%`. The posterior mean is `38.0%` and the 95% credible interval is `31.8% - 44.4%`. In this sample, a substantial minority of passers entered the storefront contact area, but most passers still continued through the traffic area without measurable facade contact. This makes the ROI definition important: widening the Traffic ROI increases the denominator and makes the rate more conservative.
+
+The facade-zone matrix is best read as a path-analysis aid, not a causal attribution model. The entrance-adjacent zone naturally dominates last-touch signals because customers must pass near the entrance to enter. The more interesting signal is upstream first-touch: window zones away from the entrance can still become the first recorded facade contact before an eventual entry. That suggests the facade may work as a distributed attention surface, while the entrance area acts as the final conversion point.
+
+The strongest practical takeaway is methodological. A single, short, handheld storefront clip can produce a useful diagnostic workflow: define traffic/contact/entrance regions, stabilize the footage, track people, inspect entry events, quantify uncertainty, and review facade-zone paths. The result should not be used as a definitive store performance evaluation. It is better framed as an anonymized analytics demo and a hypothesis generator for longer, better-controlled observation.
+
 ## Public Artifact
 
 The shareable anonymized sample is in:
@@ -36,7 +46,7 @@ The shareable anonymized sample is in:
 docs/index.html
 ```
 
-Open this HTML file in a browser to view the full results. The richer written observations are in `docs/README.md`.
+Open this HTML file in a browser to view the full results.
 
 Debug video:
 
@@ -53,7 +63,6 @@ It includes:
 - Facade-zone analysis
 - An anonymized debug video with storefront-name masks
 - Metric definitions in English and Japanese
-- Summary observations written as an anonymized method demonstration
 
 The repository intentionally excludes raw videos, unmasked outputs, and store-name-bearing intermediate files through `.gitignore`.
 
@@ -133,6 +142,16 @@ Annotation controls:
 
 GitHubのリポジトリトップページでは、このREADMEのプレビュー画像とサマリーテーブルが直接表示されます。HTMLレポートと埋め込み動画は、GitHub PagesまたはローカルHTMLで見るのが確実です。
 
+## 所見
+
+このサンプルでは、Traffic ROI内の観測通行者が `227`、ファサード接触が `86`、入店が `16` でした。したがって観測された入店率は `16 / 227 = 7.0%` です。Beta-Binomialモデルでは、事後平均は `7.4%`、95%信用区間は `4.4% - 11.1%` です。短い動画では一点の率だけを見るより、「真の入店傾向はこの程度の幅であり得る」と読むほうが自然です。
+
+観測された接触率は `86 / 227 = 37.9%` です。事後平均は `38.0%`、95%信用区間は `31.8% - 44.4%` です。このサンプルでは、通行者の一定割合が店頭接触領域に入っていますが、多くの人はTraffic ROIを通過するだけで、ファサード接触までは至っていません。そのため、Traffic ROIをどこまで広く取るかが結果に大きく影響します。今回の定義は分母を広めに取っているため、率はやや保守的に出ます。
+
+ファサード分割は、売場・ウィンドウの効果を断定するものではなく、入店前の経路を読むための補助線として見るのが適切です。入口近傍領域のlast-touchが強く出るのは、入店者が入口前を通る以上、定義上かなり自然です。むしろ見る価値があるのは、入口から離れたウィンドウ領域が入店者の初回接触点になっている点です。これは、ファサード全体が注意を拾い、最終的に入口周辺で回収する、という仮説につながります。
+
+この分析で一番意味があるのは、特定店舗の良し悪しを評価することではなく、店頭行動分析のワークフローが成立することを示せた点です。ROIを定義し、手ブレを補正し、人物を追跡し、入店イベントを目視確認し、統計的不確実性を付け、ファサード別の接触経路を見る。この一連の流れは、より長時間・複数日・固定カメラの観測に拡張すれば、店舗設計やファサード改善の仮説検証に使える可能性があります。
+
 ## 公開用アーティファクト
 
 共有用の匿名化済みサンプルは以下にあります。
@@ -141,7 +160,7 @@ GitHubのリポジトリトップページでは、このREADMEのプレビュ�
 docs/index.html
 ```
 
-分析結果の本体は、このHTMLをブラウザで開くと確認できます。より詳しい所見は `docs/README.md` に記載しています。
+分析結果の本体は、このHTMLをブラウザで開くと確認できます。
 
 デバッグ動画:
 
@@ -158,7 +177,6 @@ GitHubのMarkdownでは、ローカルMP4がREADME内で安定してインライ
 - ファサード分割分析
 - 店舗名をマスクした匿名化デバッグ動画
 - 英語・日本語のメトリクス定義
-- 匿名化された手法デモとしての所見
 
 raw動画、未マスク出力、店舗名を含む中間ファイルは `.gitignore` で除外しています。
 
