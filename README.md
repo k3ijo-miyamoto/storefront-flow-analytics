@@ -22,7 +22,7 @@ The app analyzes pedestrian flow around a storefront using manually configured R
 
 View the full bilingual report:
 
-- GitHub Pages: enable Pages from `/docs`, then open `https://<owner>.github.io/<repository>/`
+- GitHub Pages: https://k3ijo-miyamoto.github.io/storefront-flow-analytics/
 - Local file: open `docs/index.html` in a browser
 - Debug video file: `docs/figures/store_a_behavior_debug_h264.mp4`
 
@@ -127,7 +127,7 @@ Annotation controls:
 
 詳細な日英切替レポートを見る方法:
 
-- GitHub Pages: `/docs` からPagesを有効化し、`https://<owner>.github.io/<repository>/` を開く
+- GitHub Pages: https://k3ijo-miyamoto.github.io/storefront-flow-analytics/
 - ローカルファイル: `docs/index.html` をブラウザで開く
 - デバッグ動画ファイル: `docs/figures/store_a_behavior_debug_h264.mp4`
 
