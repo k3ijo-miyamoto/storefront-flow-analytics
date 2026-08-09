@@ -6,7 +6,7 @@ Anonymous behavior analytics for storefront videos.
 
 The app analyzes pedestrian flow around a storefront using manually configured ROIs, person detection, tracking, and aggregate behavior metrics. It can generate bilingual EN/JP reports with anonymized videos.
 
-![Anonymized storefront analytics preview](public_artifact/figures/store_a_anonymized_check.jpg)
+![Anonymized storefront analytics preview](docs/figures/store_a_anonymized_check.jpg)
 
 ## Demo Results
 
@@ -23,8 +23,8 @@ The app analyzes pedestrian flow around a storefront using manually configured R
 View the full bilingual report:
 
 - GitHub Pages: enable Pages from `/docs`, then open `https://<owner>.github.io/<repository>/`
-- Local file: open `public_artifact/index.html` in a browser
-- Debug video file: `public_artifact/figures/store_a_behavior_debug_h264.mp4`
+- Local file: open `docs/index.html` in a browser
+- Debug video file: `docs/figures/store_a_behavior_debug_h264.mp4`
 
 GitHub's repository README shows this preview image and summary table directly on the repository top page. The full HTML report and embedded video are best viewed through GitHub Pages or by opening the local HTML file.
 
@@ -128,8 +128,8 @@ Annotation controls:
 詳細な日英切替レポートを見る方法:
 
 - GitHub Pages: `/docs` からPagesを有効化し、`https://<owner>.github.io/<repository>/` を開く
-- ローカルファイル: `public_artifact/index.html` をブラウザで開く
-- デバッグ動画ファイル: `public_artifact/figures/store_a_behavior_debug_h264.mp4`
+- ローカルファイル: `docs/index.html` をブラウザで開く
+- デバッグ動画ファイル: `docs/figures/store_a_behavior_debug_h264.mp4`
 
 GitHubのリポジトリトップページでは、このREADMEのプレビュー画像とサマリーテーブルが直接表示されます。HTMLレポートと埋め込み動画は、GitHub PagesまたはローカルHTMLで見るのが確実です。
 
